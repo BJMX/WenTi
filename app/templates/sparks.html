@@ -1,0 +1,43 @@
+{% extends '__layout_nav.html' %}
+
+{% block main %}
+<div class="container" style="margin-top: 30px">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>此刻闪念</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>闪念</label>
+                            {{ form.spark }}
+                            {% for v in form.spark.errors %}
+                            <p style="color: red">{{ v }}</p>
+                            {% endfor %}
+                        </div>
+                        {{ form.submit }}
+                        {{ form.csrf_token }}
+                    </form>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    想说就说
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $('#nav2').addClass('active')
+    })
+
+
+
+
+</script>
+{% endblock %}

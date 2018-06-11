@@ -1,0 +1,47 @@
+{% extends '__layout_form.html' %}
+
+{% block card %}
+<div class="card">
+    <div class="card-header">
+        注册
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label>用户名</label>
+                {{ form.name }}
+                {% for v in form.name.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>邮箱</label>
+                {{ form.email }}
+                {% for v in form.email.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+                <small id="emailHelp" class="form-text text-muted">邮箱信息不会泄露</small>
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                {{ form.password }}
+                {% for v in form.password.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>确认密码</label>
+                {{ form.confirmpwd }}
+                {% for v in form.confirmpwd.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+            </div>
+            {{ form.submit }}
+            {{ form.csrf_token }}
+        </form>
+    </div>
+    <div class="card-footer text-muted text-center">
+        已有账号？<a href="/login">登录</a>
+    </div>
+</div>
+{% endblock %}

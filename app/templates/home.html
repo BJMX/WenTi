@@ -1,0 +1,18 @@
+{% extends '__layout_nav.html' %}
+
+{% block main %}
+{% include '__home.html' %}
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $('#nav1').addClass('active')
+    })
+</script>
+<script>
+    $(document).ready(function(){
+        $('#list_nav1').addClass('active')
+    })
+</script>
+{% endblock %}

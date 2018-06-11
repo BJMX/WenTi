@@ -1,0 +1,32 @@
+{% extends '__layout_nav.html' %}
+
+{% block main %}
+<div class="container" style="margin-top: 30px">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{ spark.author.username }}说：</h3>
+                    <hr/>
+                    <p>{{ spark.text }}</p>
+                    <div>
+                        <span>{{ spark.addtime }}</span>
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    底部
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+        $('#nav1').addClass('active')
+    })
+
+</script>
+{% endblock %}

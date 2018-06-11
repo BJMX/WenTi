@@ -1,0 +1,32 @@
+{% extends '__layout_form.html' %}
+
+{% block card %}
+<div class="card">
+    <div class="card-header">
+        登录
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label>用户名</label>
+                {{ form.name }}
+                {% for v in form.name.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                {{ form.password }}
+                {% for v in form.password.errors %}
+                <p style="color: red">{{ v }}</p>
+                {% endfor %}
+            </div>
+            {{ form.submit }}
+            {{ form.csrf_token }}
+        </form>
+    </div>
+    <div class="card-footer text-muted text-center">
+        没有账号？<a href="/register">注册</a>
+    </div>
+</div>
+{% endblock %}

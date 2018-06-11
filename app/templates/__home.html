@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 30px">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-tabs">
+                        <li id="list_nav1" class="nav-item">
+                            <a class="nav-link active" href="/">问题</a>
+                        </li>
+                        <li id="list_nav2" class="nav-item">
+                            <a class="nav-link" href="/home_spark">闪念</a>
+                        </li>
+                    </ul>
+                    <div class="container">
+                        <ul style="list-style: none">
+                        {% for question in questions %}
+                            <li style="margin-top: 10px">
+                                <div class="question-group">
+                                    <p><a href="/question/{{ question.id }}">{{ question.title }}</a> </p>
+                                    <p>{{ question.detail }}</p>
+                                    <div class="question-info">
+                                        <span>{{ question.author_name }}</span>
+                                        <span>{{ question.addtime }}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <hr/>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    底部
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container" style="margin-top: 30px">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <ul class="nav nav-tabs">
+                        <li id="list_nav1" class="nav-item">
+                            <a class="nav-link active" href="/">问题</a>
+                        </li>
+                        <li id="list_nav2" class="nav-item">
+                            <a class="nav-link" href="/home_spark">闪念</a>
+                        </li>
+                    </ul>
+                    <div class="container">
+                        <ul style="list-style: none">
+                        {% for spark in sparks %}
+                            <li style="margin-top: 10px">
+                                <div class="spark-group">
+                                    <p><a href="/spark/{{ spark.id }}">{{ spark.id }} {{ spark.author.username }}</a> </p>
+                                    <p>{{ spark.text }}</p>
+                                    <div class="spark-info">
+                                        <span>{{ spark.author_name }}</span>
+                                        <span>{{ spark.addtime }}</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <hr/>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    底部
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
